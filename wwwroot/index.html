@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Blazor App</title>
+    <base href="/" />
+
+    <!-- Agrega aquí la referencia a print.js -->
+    <script src="js/print.js"></script>
+
+    <!-- Agrega aquí las funciones JavaScript personalizadas para la Web Bluetooth API -->
+    <script src="js/print-script.js"></script> <!-- Asegúrate de que el archivo print-script.js esté en la carpeta wwwroot/js -->
+
+    <!-- Otros metadatos y estilos -->
+</head>
+<body>
+    <app>
+        @(await Html.RenderComponentAsync<App>())
+    </app>
+</body>
+</html>

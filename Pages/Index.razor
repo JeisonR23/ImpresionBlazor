@@ -1,0 +1,29 @@
+﻿@inject IJSRuntime JSRuntime
+@page "/"
+
+
+
+<h1>Imprimir</h1>
+
+<p>Presiona el botón para imprimir una factura:</p>
+<button @onclick="PrintInvoice">Imprimir factura</button>
+
+@code {
+    async Task PrintInvoice()
+    {
+        // Generar el contenido de la factura (puedes personalizar esto según tus necesidades)
+        string factura = "Factura de ejemplo\n" +
+                         "==================\n" +
+                         "Fecha: 28 de julio de 2023\n" +
+                         "Cliente: Juan Pérez\n" +
+                         "Productos:\n" +
+                         "   - Producto A: $10\n" +
+                         "   - Producto B: $20\n" +
+                         "Total: $30\n" +
+                         "==================\n" +
+                         "¡Gracias por su compra!";
+
+        // Aquí llamamos a la función JavaScript para imprimir el contenido de la factura
+        await JSRuntime.InvokeVoidAsync("printContent", factura);
+    }
+}
